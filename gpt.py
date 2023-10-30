@@ -54,7 +54,6 @@ class GPTApi:
                 {"role" : "user", "content" : blogWritingPrompt},
             ]
         )
-
         
         blogResponse = blogResponse["choices"][0]["message"]["content"]
     
