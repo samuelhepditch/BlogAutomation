@@ -6,4 +6,5 @@ class GPTKeywordPrompts(Enum):
     EXERCISE = "Mention keywords relevant to physical exercise and fitness in quotation marks and seperated by commas."
 
 class GPTBlogPrompts(Enum):
-    GENERAL = "Write a blog"
+    ROLE = "I want you to act as an internet health blogger"
+    BLOG = "You are a well-loved author of a popular blog that writes about women’s health and wellness. Please write an interesting click worthy article about {0}. Include these keywords: {1}. Keep the title simple yet click worthy."

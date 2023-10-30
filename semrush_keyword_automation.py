@@ -6,6 +6,8 @@ from selenium.common.exceptions import NoSuchElementException
 from blog_keyword import Keyword, KeywordsList
 from enum import Enum
 import time
+import os
+import shutil
 
 class Keyword:
     def __init__(self, keyword_difficulty, cost_per_click, results):
@@ -57,14 +59,40 @@ def check_for_results(driver):
 
     
 def convert_csv_to_filtered_keyword_list(driver):
-    input("Please export the keywords csv and position in csv folder. Press Enter when done...")
+    # input("Please export the keywords csv and position in csv folder. Press Enter when done...")
+
+    ## This will download the CSV
+    driver.find_element(By.CSS_SELECTOR, ".\\_theme_default_vw9c8-kmt_ > .\\___SButton_brxh6-kmt_ .\\___SIcon_1kytx-kmt_").click()
+    driver.find_element(By.CSS_SELECTOR, ".kwo-one-line-layout__item:nth-child(2) > .\\___SButton_brxh6-kmt_ .\\_size_m_brxh6-kmt_").click()
+
+    # This will move that downloaded csv to the ./csv folder
+    # Path to your downloads folder
+    source_dir = "D:\Downloads"
+
+    # Path to your destination folder (current directory's .csv folder)
+    dest_dir = os.path.join(os.getcwd(), "csv")
+
+        # List all files in the downloads directory
+    all_files = [f for f in os.listdir(source_dir) if os.path.isfile(os.path.join(source_dir, f))]
+
+    # Filter out only .csv files
+    csv_files = [f for f in all_files if f.endswith('.csv')]
+
+    # Find the most recent .csv file based on modification time
+    if csv_files:
+        newest_csv = max(csv_files, key=lambda f: os.path.getmtime(os.path.join(source_dir, f)))
+
+        # Move the most recent .csv file to the destination directory
+        shutil.move(os.path.join(source_dir, newest_csv), os.path.join(dest_dir, newest_csv))
+        print(f"Moved {newest_csv} to {dest_dir}")
+    else:
+        print("No .csv files found in the specified directory.")
 
     keyword_difficulty = int(input("Maximum keyword difficulty: "))
     query_number =  int(input("Minimum number of monthly queries: "))
     cost_per_click = float(input("Minimum cost-per-click: "))
     
-    csv_path = "csv/test.csv"
-    keywords = KeywordsList(csv_path)
+    keywords = KeywordsList(newest_csv)
     keywords.filter_keywords(keyword_difficulty, query_number, cost_per_click)  
 
     for keyword in keywords:

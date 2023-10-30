@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Stores auth credentials
+auth.py
+
 # Distribution / packaging
 .Python
 build/
