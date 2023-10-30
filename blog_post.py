@@ -1,7 +1,11 @@
 class BlogPost:
     title: str
-    body: str
+    content: str
+    status: str
+    category: str
 
-    def __init__(self, title, body):
+    def __init__(self, title, content, category):
         self.title = title
-        self.body = body
+        self.content = content
+        self.status = "draft"
+        self.category = category
