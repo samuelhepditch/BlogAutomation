@@ -34,7 +34,7 @@ def write_blog():
         add_keyword_to_file(keyword)
 
     # Call your main code to create a blog post
-    create_blog_post(topic, keywords)
+    # create_blog_post(topic, keywords)
 
     return jsonify({"status": "success", "message": "Blog post written successfully!"})
 
