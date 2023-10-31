@@ -4,7 +4,13 @@ import os
 
 app = Flask(__name__)
 
-used_keywords = set()
+def get_used_keywords():
+    with open('used_keywords.txt', 'r') as f:
+        return set(f.read().splitlines())
+
+def add_keyword_to_file(keyword):
+    with open('used_keywords.txt', 'a') as f:
+        f.write(keyword + '\n')
 
 @app.route('/')
 def index():
@@ -15,12 +21,16 @@ def write_blog():
     title = request.form.get('topic')
     keywords = request.form.get('keywords').split(',')
 
+    used_keywords = get_used_keywords()
+
     for keyword in keywords:
         keyword = keyword.strip()
+        
         if keyword in used_keywords:
             return jsonify({"status": "error", "message": f"Keyword '{keyword}' has been used before!"})
-    
-    used_keywords.update(keywords)
+
+        # Add keyword to the file
+        add_keyword_to_file(keyword)
 
     # Call your main code to create a blog post
     create_blog_post(title, keywords)
@@ -28,4 +38,9 @@ def write_blog():
     return jsonify({"status": "success", "message": "Blog post written successfully!"})
 
 if __name__ == "__main__":
+    # Check if the text file exists, if not, create it
+    if not os.path.exists('used_keywords.txt'):
+        with open('used_keywords.txt', 'w'):
+            pass
+
     app.run(debug=True)

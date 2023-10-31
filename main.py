@@ -7,7 +7,7 @@ def create_blog_post(title, keywords):
     wpAPI = WordPressApi() 
     availableCategories = wpAPI.get_categories()
 
-    gptAPI = GPTApi(test=True, categories=availableCategories)
+    gptAPI = GPTApi(test=False, categories=availableCategories)
 
     blogPost = gptAPI.create_blog_post(title, keywords)
 
