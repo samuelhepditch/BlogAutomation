@@ -1,25 +1,17 @@
 import requests
-
+import base64
 from auth import *
 from blog_post import BlogPost
 
 
 class WordPressApi:
-    def __init__(self):
-        self.accessKey = self.get_access_key(wp_auth_args)
-
-    def get_access_key(self, auth_args):
-        # Step 2: Get Access Key
-        response = requests.post('https://public-api.wordpress.com/oauth2/token', data=auth_args)
-        if response.status_code == 200:
-            return response.json().get('access_token')
-        return None
-    
 
     def create_post(self, blogPost: BlogPost):
+        auth_string = '{}:{}'.format(wp_username, wp_password)
+        encoded_auth_string = base64.b64encode(auth_string.encode('utf-8')).decode('utf-8')
+
         headers = {
-            'Authorization': f'Bearer {self.accessKey}',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Authorization': 'Basic ' + encoded_auth_string
         }
 
         post_args = {
@@ -30,8 +22,10 @@ class WordPressApi:
         }
 
         print(f"Publishing the blog post...")
-        response = requests.post(f'https://public-api.wordpress.com/rest/v1/sites/{wp_site_id}/posts/new/', headers=headers, data=post_args)
+        response = requests.post(f'{wp_domain}/wp-json/wp/v2/posts', headers=headers, data=post_args)
+
         return response.json()
+
 
 
     def get_categories(self) -> list[str]:
@@ -45,13 +39,13 @@ class WordPressApi:
         responseJson = response.json()
 
         categories = [item["name"] for item in responseJson]
+        cleanedCategories = []
 
-        return categories
+        for category in categories:
+            cleaned = category.replace("&amp;", "&")
+            cleanedCategories.append(cleaned)
 
-
-
-
-
+        return cleanedCategories
 
 
 
