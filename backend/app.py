@@ -33,6 +33,11 @@ def write_blog():
         keywords = body['keywords'].split(',')
         keywords.append(topic)
 
+        # Call your main code to create a blog post
+        # create_blog_post(topic, keywords)
+
+        # time.sleep(5)
+
         used_keywords = get_used_keywords()
 
         for keyword in keywords:
@@ -44,14 +49,10 @@ def write_blog():
             # Add keyword to the file
             add_keyword_to_file(keyword)
 
-        # Call your main code to create a blog post
-        create_blog_post(topic, keywords)
-
-
         return jsonify({"status": "success", "message": "Blog post written successfully!"})
     
     except Exception as error:
-        return jsonify({'error': error})
+        return jsonify({"status": "error", 'message': error})
     
 if __name__ == "__main__":
     # Check if the text file exists, if not, create it

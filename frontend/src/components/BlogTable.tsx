@@ -15,6 +15,7 @@ const BlogTable = (props: BlogTableProps) => {
           <th scope="col">Post Topic</th>
           <th scope="col">Post Keywords</th>
           <th scope="col">Status</th>
+          <th scope="col">Notes</th>
         </tr>
       </thead>
       <tbody>
@@ -39,6 +40,7 @@ const BlogTable = (props: BlogTableProps) => {
               >
                 {blog.status}
               </td>
+              <td>{blog.notes}</td>
             </tr>
           ))}
       </tbody>

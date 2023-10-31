@@ -35,6 +35,14 @@ function App() {
     });
   };
 
+  const udpateBlogNotes = (blogIndex: number, message: string) => {
+    setBlogs((prevBlogs) => {
+      const updatedBlogs = [...prevBlogs];
+      updatedBlogs[blogIndex].notes = message;
+      return updatedBlogs;
+    });
+  };
+
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     const blogIndex = blogs.length;
@@ -42,15 +50,17 @@ function App() {
     addBlog(blogIndex);
     try {
       const response = await blogService.writeBlog(topic, keywords);
-
-      setMessage(response.data.message);
-      setMessageType("success");
-
-      updateBlogStatus(blogIndex, BlogStatus.success);
+      console.log(response.data.status);
+      if (response.data.status === "error") {
+        updateBlogStatus(blogIndex, BlogStatus.failed);
+      } else {
+        updateBlogStatus(blogIndex, BlogStatus.success);
+      }
+      udpateBlogNotes(blogIndex, response.data.message);
     } catch (e: unknown) {
-      setMessageType("error");
       updateBlogStatus(blogIndex, BlogStatus.failed);
       if (e instanceof Error) {
+        udpateBlogNotes(blogIndex, e.message);
         return {
           message: `Things exploded (${e.message})`,
         };
@@ -96,9 +106,6 @@ function App() {
               Write Blog Post
             </button>
           </form>
-          {message && (
-            <div className={`alert alert-${messageType} mt-3`}>{message}</div>
-          )}
         </div>
       </div>
       <BlogTable blogs={blogs} />
