@@ -11,4 +11,4 @@ def create_blog_post(title, keywords):
 
     blogPost = gptAPI.create_blog_post(title, keywords)
 
-    wpAPI.create_draft_post(blogPost)
+    wpAPI.create_post(blogPost)

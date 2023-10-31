@@ -16,7 +16,7 @@ class WordPressApi:
         return None
     
 
-    def create_draft_post(self, blogPost: BlogPost):
+    def create_post(self, blogPost: BlogPost):
         headers = {
             'Authorization': f'Bearer {self.accessKey}',
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -29,7 +29,7 @@ class WordPressApi:
             'categories': blogPost.category
         }
 
-        print(f"Uploading the post as a draft...")
+        print(f"Publishing the blog post...")
         response = requests.post(f'https://public-api.wordpress.com/rest/v1/sites/{wp_site_id}/posts/new/', headers=headers, data=post_args)
         return response.json()
 

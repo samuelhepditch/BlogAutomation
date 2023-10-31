@@ -18,8 +18,9 @@ def index():
 
 @app.route('/write_blog', methods=['POST'])
 def write_blog():
-    title = request.form.get('topic')
+    topic = request.form.get('topic')
     keywords = request.form.get('keywords').split(',')
+    keywords.append(topic)
 
     used_keywords = get_used_keywords()
 
@@ -33,7 +34,7 @@ def write_blog():
         add_keyword_to_file(keyword)
 
     # Call your main code to create a blog post
-    create_blog_post(title, keywords)
+    create_blog_post(topic, keywords)
 
     return jsonify({"status": "success", "message": "Blog post written successfully!"})
 

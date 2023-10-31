@@ -7,5 +7,5 @@ class BlogPost:
     def __init__(self, title, content, category):
         self.title = title
         self.content = content
-        self.status = "draft"
+        self.status = "publish"
         self.category = category
