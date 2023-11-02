@@ -40,7 +40,7 @@ class GPTApi:
 
         # 1. Get a title based on the topic and list of keywords.
         title_prompt = (f"You want to write a blog post about: {topic}. "
-                        "You must come up with a catchy, concise and SEO optimized title."
+                        "You must come up with a concise and SEO optimized title."
                         "Include the topic in the title. Only return the title and ensure"
                         "that it is 60 characters or less.")
         
@@ -56,7 +56,7 @@ class GPTApi:
         # 2. Get the content outline for the blog post based on the title.
         outline_prompt = (f"Create a topic cluster for the blog post titled: {title} "
                           f"using these keywords: {', '.join(keywords)}. "
-                          "Separate clusters by newline. Do not give the title.")
+                          "Separate clusters by empty line. Do not give the title.")
 
         outline_response = openai.ChatCompletion.create(
             model=self.model_4, 
