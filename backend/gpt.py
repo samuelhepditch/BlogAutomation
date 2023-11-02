@@ -36,24 +36,8 @@ class GPTApi:
         return chosenCategory
 
 
-    def create_blog_post(self, topic, keywords: list) -> BlogPost:
-
-        # 1. Get a title based on the topic and list of keywords.
-        title_prompt = (f"You want to write a blog post about: {topic}. "
-                        "You must come up with a concise and SEO optimized title."
-                        "Include the topic in the title. Only return the title and ensure"
-                        "that it is 60 characters or less.")
-        
-        title_response = openai.ChatCompletion.create(
-            model=self.model_4, 
-            messages=[
-                {"role": "user", "content": title_prompt}
-            ]
-        )
-        title = title_response['choices'][0]['message']['content']
-        title = title.strip("""\"""")
-
-        # 2. Get the content outline for the blog post based on the title.
+    def create_blog_post(self, title, keywords: list) -> BlogPost:
+        # 1. Get the content outline for the blog post based on the title.
         outline_prompt = (f"Create a topic cluster for the blog post titled: {title} "
                           f"using these keywords: {', '.join(keywords)}. "
                           "Separate clusters by empty line. Do not give the title.")
@@ -74,9 +58,10 @@ class GPTApi:
                               "This is only one section of the article. No need for an intro or conclusion. " 
                               "Keep it interesting & informative. Organize the content by the subtopic, including "
                               "headings for each subtopic. Write 2 paragraphs for each subtopic."
-                              "Use an active voice. Write at the level of a twelfth-grader. Try to include "
-                              f"these keywords, if they are relevant: {', '.join(keywords)}\n"
-                              f"This is the topic outline: {section}")
+                              "Use an active voice. Write at the level of a twelfth-grader. Include "
+                              f"these keywords if they are relevant: {', '.join(keywords)}\n"
+                              "Output as HTML. "
+                              f"This is the topic outline:\n{section}")
             
             content_response = openai.ChatCompletion.create(
                 model=self.model_4, 
