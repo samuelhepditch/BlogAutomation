@@ -33,20 +33,18 @@ def write_blog():
         keywords = body['keywords'].split(',')
         keywords.append(topic)
 
-        # time.sleep(5)
-
         used_keywords = get_used_keywords()
 
+        '''
         for keyword in keywords:
             keyword = keyword.strip()
             
             if keyword in used_keywords:
                 return jsonify({"status": "error", "message": f"Keyword '{keyword}' has been used before!"})
-
-            
+        '''
         
         # Call your main code to create a blog post
-        # create_blog_post(topic, keywords)
+        create_blog_post(topic, keywords)
 
         # Add keyword to the file only if blog is created successfully
         add_keyword_to_file(keyword)
