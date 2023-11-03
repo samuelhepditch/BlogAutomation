@@ -58,5 +58,3 @@ class WordPressApi:
         return cleanedCategories
 
 
-WordPressApi().get_categories()
-
