@@ -1,13 +1,9 @@
-import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import BlogTable from "./components/BlogTable";
 import Blog from "./data/Blog";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BlogService } from "./backend/BlogService";
 import { RequestStatus } from "./data/RequestStatus";
 import InputForm from "./components/InputForm";
-import StatusDropDown from "./components/StatusDropdown";
 import { BlogStatus } from "./data/BlogStatus";
 
 function App() {
@@ -21,7 +17,7 @@ function App() {
     blogKeywords: string,
     blogStatus: BlogStatus
   ) => {
-    let newBlog: Blog = new Blog(
+    const newBlog: Blog = new Blog(
       blogIndex,
       blogTitle,
       blogKeywords,
