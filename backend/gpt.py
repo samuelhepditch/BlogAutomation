@@ -38,7 +38,7 @@ class GPTApi:
 
     def create_blog_post(self, title, keywords: list, status) -> BlogPost:
         # 1. Get the content outline for the blog post based on the title.
-        outline_prompt = (f"Create a detailed outline for the blog post titled: {title} "
+        outline_prompt = (f"Create a detailed outline for the blog post titled '{title}' "
                           f"using these keywords: {', '.join(keywords)}. "
                           "Seperate each section. Do not give the title.")
 
