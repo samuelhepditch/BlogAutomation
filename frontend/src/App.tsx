@@ -8,7 +8,7 @@ import { BlogService } from "./backend/BlogService";
 import { RequestStatus } from "./data/RequestStatus";
 import InputForm from "./components/InputForm";
 import StatusDropDown from "./components/StatusDropdown";
-import { BlogState } from "./data/BlogState";
+import { BlogStatus } from "./data/BlogStatus";
 
 function App() {
   const [message, setMessage] = useState<string>("");
@@ -19,14 +19,14 @@ function App() {
     blogIndex: number,
     blogTitle: string,
     blogKeywords: string,
-    blogState: BlogState
+    blogStatus: BlogStatus
   ) => {
     let newBlog: Blog = new Blog(
       blogIndex,
       blogTitle,
       blogKeywords,
       RequestStatus.in_progress,
-      blogState
+      blogStatus
     );
 
     setBlogs((prevBlogs) => [...prevBlogs, newBlog]);
@@ -35,7 +35,7 @@ function App() {
   const updateBlogStatus = (blogIndex: number, status: RequestStatus) => {
     setBlogs((prevBlogs) => {
       const updatedBlogs = [...prevBlogs];
-      updatedBlogs[blogIndex].status = status;
+      updatedBlogs[blogIndex].requestStatus = status;
       return updatedBlogs;
     });
   };

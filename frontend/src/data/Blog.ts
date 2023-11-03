@@ -1,21 +1,21 @@
-import { BlogState } from "./BlogState";
+import { BlogStatus } from "./BlogStatus";
 import { RequestStatus } from "./RequestStatus";
 
 class Blog {
     index: number;
     topic: string;
     keywords: string;
-    status: RequestStatus;
+    requestStatus: RequestStatus;
     notes: string;
-    state: BlogState;
+    status: BlogStatus;
 
-    constructor(index: number, topic: string, keywords: string, status: RequestStatus, state: BlogState) {
+    constructor(index: number, topic: string, keywords: string, requestStatus: RequestStatus, status: BlogStatus) {
         this.index = index;
         this.topic = topic;
         this.keywords = keywords;
-        this.status = status;
+        this.requestStatus = requestStatus;
         this.notes = "";
-        this.state = state;
+        this.status = status;
     }
 }
 

@@ -1,4 +1,4 @@
-export enum BlogState{
+export enum BlogStatus{
     draft = "draft",
     publish = "publish",
 }

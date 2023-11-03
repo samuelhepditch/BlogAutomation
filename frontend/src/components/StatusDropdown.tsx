@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { BlogState } from "../data/BlogState";
+import { BlogStatus } from "../data/BlogStatus";
 
 type DropdownProps = {
-  updateBlogState: (value: BlogState) => void;
+  updateBlogStatus: (value: BlogStatus) => void;
 };
 
 const StatusDropDown: React.FC<DropdownProps> = (props) => {
-  const [selectedValue, setSelectedValue] = useState<BlogState>(
-    BlogState.draft
+  const [selectedValue, setSelectedValue] = useState<BlogStatus>(
+    BlogStatus.draft
   );
 
   const handleDropdownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const value = e.target.value as BlogState;
+    const value = e.target.value as BlogStatus;
     setSelectedValue(value);
 
-    props.updateBlogState(value);
+    props.updateBlogStatus(value);
   };
 
   return (
@@ -23,8 +23,8 @@ const StatusDropDown: React.FC<DropdownProps> = (props) => {
       value={selectedValue}
       onChange={handleDropdownChange}
     >
-      <option value={BlogState.draft}>Draft</option>
-      <option value={BlogState.publish}>Publish</option>
+      <option value={BlogStatus.draft}>Draft</option>
+      <option value={BlogStatus.publish}>Publish</option>
     </select>
   );
 };

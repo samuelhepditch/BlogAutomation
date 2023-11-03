@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RequestStatus } from "../data/RequestStatus";
 import { BlogService } from "../backend/BlogService";
 import Blog from "../data/Blog";
-import { BlogState } from "../data/BlogState";
+import { BlogStatus } from "../data/BlogStatus";
 import StatusDropDown from "./StatusDropdown";
 
 type InputFormProps = {
@@ -11,7 +11,7 @@ type InputFormProps = {
     blogIndex: number,
     blogTitle: string,
     blogKeywords: string,
-    blogState: BlogState
+    blogStatus: BlogStatus
   ) => void;
   updateBlogStatus: (blogIndex: number, status: RequestStatus) => void;
   udpateBlogNotes: (blogIndex: number, message: string) => void;
@@ -23,7 +23,7 @@ type InputFormProps = {
 const BlogForm: React.FC<InputFormProps> = (props) => {
   const [blogTitle, setBlogTitle] = useState<string>("");
   const [blogKeyWords, setBlogKeywords] = useState<string>("");
-  const [blogState, setBlogState] = useState<BlogState>(BlogState.draft);
+  const [blogStatus, setBlogStatus] = useState<BlogStatus>(BlogStatus.draft);
 
   const blogService = new BlogService(true);
 
@@ -31,12 +31,12 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
     event.preventDefault();
     const blogIndex = props.blogs.length;
 
-    props.addBlog(blogIndex, blogTitle, blogKeyWords, blogState);
+    props.addBlog(blogIndex, blogTitle, blogKeyWords, blogStatus);
     try {
       const response = await blogService.writeBlog(
         blogTitle,
         blogKeyWords,
-        blogState
+        blogStatus
       );
       console.log(response.data.status);
       if (response.data.status === "error") {
@@ -90,7 +90,7 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
           />
         </div>
         <div className="mb-3">
-          <StatusDropDown updateBlogState={setBlogState} />
+          <StatusDropDown updateBlogStatus={setBlogStatus} />
         </div>
 
         <button type="submit" className="btn btn-primary">

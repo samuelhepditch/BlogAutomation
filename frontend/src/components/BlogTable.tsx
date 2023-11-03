@@ -12,7 +12,7 @@ const BlogTable = (props: BlogTableProps) => {
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Post Topic</th>
+          <th scope="col">Post Title</th>
           <th scope="col">Post Keywords</th>
           <th scope="col">Status</th>
           <th scope="col">Notes</th>
@@ -29,16 +29,16 @@ const BlogTable = (props: BlogTableProps) => {
               <td>{blog.keywords}</td>
               <td
                 className={
-                  blog.status === RequestStatus.success
+                  blog.requestStatus === RequestStatus.success
                     ? "table-success"
-                    : blog.status === RequestStatus.failed
+                    : blog.requestStatus === RequestStatus.failed
                     ? "table-danger"
-                    : blog.status === RequestStatus.in_progress
+                    : blog.requestStatus === RequestStatus.in_progress
                     ? "table-info"
                     : ""
                 }
               >
-                {blog.status}
+                {blog.requestStatus}
               </td>
               <td>{blog.notes}</td>
             </tr>
