@@ -37,7 +37,23 @@ class GPTApi:
 
 
     def create_blog_post(self, title, keywords: list, status) -> BlogPost:
-        # 1. Get the content outline for the blog post based on the title.
+        content = []
+        
+        # 1. Get the introduction for the article.
+        intro_prompt = (f"Write a 200 word introduction for a blog article titled '{title}'. "
+                          "Keep it simple & informative. Use an active voice. Write at the level of a twelfth-grader. "
+                          f"Include these keywords: {', '.join(keywords)}. Output as HTML. Do not include quotes in your output. Do not include the title.")
+        
+        intro_response = openai.ChatCompletion.create(
+            model=self.model_4, 
+            messages=[
+                {"role": "user", "content": intro_prompt}
+            ]
+        )
+        intro = intro_response['choices'][0]['message']['content']
+        content.append(intro)
+
+        # 2. Get the content outline for the blog post based on the title.
         outline_prompt = (f"Create a detailed outline for the blog post titled '{title}' "
                           f"using these keywords: {', '.join(keywords)}. "
                           "Seperate each section. Do not give the title.")
@@ -52,7 +68,6 @@ class GPTApi:
         outline_sections = re.split(r'\n\s*\n', outline)
         
         # 3. For each item in the topic cluster, send a request to fill in the content.
-        content = []
         for section in outline_sections:
             content_prompt = ("Expand upon the topic outline below, writing 250 words for an article."
                               "This is only one section of the article. No need for an intro or conclusion. " 
@@ -70,7 +85,6 @@ class GPTApi:
                 ]
             )
             content.append(content_response['choices'][0]['message']['content'])
-            content.append("\n")
 
         # 4. Initialize and return an instance of the BlogPost class with the title and the concatenated content.
         full_content = '\n\n'.join(content)

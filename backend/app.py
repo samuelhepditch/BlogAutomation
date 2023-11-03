@@ -13,12 +13,15 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 wpAPI = WordPressApi() 
 gptAPI = GPTApi(categories=wpAPI.get_categories())
 
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
 def get_used_keywords():
-    with open('used_keywords.txt', 'r') as f:
+    with open(os.path.join(__location__, 'used_keywords.txt'), 'r') as f:
         return set(f.read().splitlines())
 
 def add_keyword_to_file(keyword):
-    with open('used_keywords.txt', 'a') as f:
+    with open(os.path.join(__location__, 'used_keywords.txt'), 'a') as f:
         f.write(keyword + '\n')
 
 def create_blog_post(title, keywords, status):
@@ -37,7 +40,6 @@ def write_blog():
         body = request.get_json()
         title = body['title']
         keywords = body['keywords'].split(',')
-        keywords.append(title)
         status = body['status']
 
         used_keywords = get_used_keywords()
@@ -45,7 +47,6 @@ def write_blog():
         for keyword in keywords:
             keyword = keyword.strip()
 
-            # Add keyword to the file only if blog is created successfully
             add_keyword_to_file(keyword)
             
             if keyword in used_keywords:
@@ -66,8 +67,8 @@ if __name__ == "__main__":
         exit()
 
     # Check if the text file exists, if not, create it
-    if not os.path.exists('used_keywords.txt'):
-        with open('used_keywords.txt', 'w'):
+    if not os.path.exists(os.path.join(__location__, 'used_keywords.txt')):
+        with open(os.path.join(__location__, 'used_keywords.txt'), 'w'):
             pass
 
     app.run(debug=True)
