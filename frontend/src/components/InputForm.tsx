@@ -33,7 +33,11 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
 
     props.addBlog(blogIndex, blogTitle, blogKeyWords, blogState);
     try {
-      const response = await blogService.writeBlog(blogTitle, blogKeyWords);
+      const response = await blogService.writeBlog(
+        blogTitle,
+        blogKeyWords,
+        blogState
+      );
       console.log(response.data.status);
       if (response.data.status === "error") {
         props.updateBlogStatus(blogIndex, RequestStatus.failed);
