@@ -11,6 +11,7 @@ export class BlogService {
         }
     }
 
+
     async writeBlog(topic: string, keywords: string): Promise<any> {
         try {
             const response = await axios.post("/write_blog", {topic: topic, keywords: keywords});
