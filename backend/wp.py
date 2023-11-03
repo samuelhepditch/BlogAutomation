@@ -56,5 +56,3 @@ class WordPressApi:
             cleanedCategories.append(cleaned)
 
         return cleanedCategories
-
-

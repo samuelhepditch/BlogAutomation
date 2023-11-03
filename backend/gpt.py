@@ -38,9 +38,9 @@ class GPTApi:
 
     def create_blog_post(self, title, keywords: list, status) -> BlogPost:
         # 1. Get the content outline for the blog post based on the title.
-        outline_prompt = (f"Create a topic cluster for the blog post titled: {title} "
+        outline_prompt = (f"Create a detailed outline for the blog post titled: {title} "
                           f"using these keywords: {', '.join(keywords)}. "
-                          "Separate clusters by empty line. Do not give the title.")
+                          "Seperate each section. Do not give the title.")
 
         outline_response = openai.ChatCompletion.create(
             model=self.model_4, 
@@ -60,7 +60,7 @@ class GPTApi:
                               "headings for each subtopic. Write 2 paragraphs for each subtopic."
                               "Use an active voice. Write at the level of a twelfth-grader. Include "
                               f"these keywords if they are relevant: {', '.join(keywords)}\n"
-                              "Output as HTML. "
+                              "Output as HTML. Do not include quotes in your output. "
                               f"This is the topic outline:\n{section}")
             
             content_response = openai.ChatCompletion.create(
