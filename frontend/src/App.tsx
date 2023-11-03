@@ -54,14 +54,17 @@ function App() {
 
   return (
     <div className="container mt-5">
-      <InputForm
-        addBlog={addBlog}
-        blogs={blogs}
-        udpateBlogNotes={udpateBlogNotes}
-        updateBlogStatus={updateBlogStatus}
-        hideAlertHandler={hideAlertHandler}
-        showAlertHandler={showAlertHandler}
-      />
+      <div>
+        <InputForm
+          addBlog={addBlog}
+          blogs={blogs}
+          udpateBlogNotes={udpateBlogNotes}
+          updateBlogStatus={updateBlogStatus}
+          hideAlertHandler={hideAlertHandler}
+          showAlertHandler={showAlertHandler}
+        />
+      </div>
+
       <br />
       {showMessage && (
         <div className="alert">
