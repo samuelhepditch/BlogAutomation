@@ -5,28 +5,34 @@ import BlogTable from "./components/BlogTable";
 import Blog from "./data/Blog";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BlogService } from "./backend/BlogService";
-import { BlogStatus } from "./data/BlogStatus";
+import { RequestStatus } from "./data/RequestStatus";
 import InputForm from "./components/InputForm";
+import StatusDropDown from "./components/StatusDropdown";
+import { BlogState } from "./data/BlogState";
 
 function App() {
-  const [blogTitle, setBlogTitle] = useState<string>("");
-  const [keywords, setKeywords] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [showMessage, setshowMessage] = useState(false);
   const [blogs, setBlogs] = useState<Array<Blog>>([]);
 
-  const addBlog = (blogIndex: number) => {
+  const addBlog = (
+    blogIndex: number,
+    blogTitle: string,
+    blogKeywords: string,
+    blogState: BlogState
+  ) => {
     let newBlog: Blog = new Blog(
       blogIndex,
       blogTitle,
-      keywords,
-      BlogStatus.in_progress
+      blogKeywords,
+      RequestStatus.in_progress,
+      blogState
     );
 
     setBlogs((prevBlogs) => [...prevBlogs, newBlog]);
   };
 
-  const updateBlogStatus = (blogIndex: number, status: BlogStatus) => {
+  const updateBlogStatus = (blogIndex: number, status: RequestStatus) => {
     setBlogs((prevBlogs) => {
       const updatedBlogs = [...prevBlogs];
       updatedBlogs[blogIndex].status = status;
@@ -54,16 +60,15 @@ function App() {
 
   return (
     <div className="container mt-5">
-      <div>
-        <InputForm
-          addBlog={addBlog}
-          blogs={blogs}
-          udpateBlogNotes={udpateBlogNotes}
-          updateBlogStatus={updateBlogStatus}
-          hideAlertHandler={hideAlertHandler}
-          showAlertHandler={showAlertHandler}
-        />
-      </div>
+      <InputForm
+        addBlog={addBlog}
+        blogs={blogs}
+        udpateBlogNotes={udpateBlogNotes}
+        updateBlogStatus={updateBlogStatus}
+        hideAlertHandler={hideAlertHandler}
+        showAlertHandler={showAlertHandler}
+        setMessage={setMessage}
+      />
 
       <br />
       {showMessage && (

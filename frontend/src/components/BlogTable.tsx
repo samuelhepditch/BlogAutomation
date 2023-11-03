@@ -1,5 +1,5 @@
 import Blog from "../data/Blog";
-import { BlogStatus } from "../data/BlogStatus";
+import { RequestStatus } from "../data/RequestStatus";
 import "../App.css";
 
 type BlogTableProps = {
@@ -29,11 +29,11 @@ const BlogTable = (props: BlogTableProps) => {
               <td>{blog.keywords}</td>
               <td
                 className={
-                  blog.status === BlogStatus.success
+                  blog.status === RequestStatus.success
                     ? "table-success"
-                    : blog.status === BlogStatus.failed
+                    : blog.status === RequestStatus.failed
                     ? "table-danger"
-                    : blog.status === BlogStatus.in_progress
+                    : blog.status === RequestStatus.in_progress
                     ? "table-info"
                     : ""
                 }

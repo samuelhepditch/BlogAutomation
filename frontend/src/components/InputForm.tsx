@@ -1,21 +1,29 @@
 import React, { useState } from "react";
-import { BlogStatus } from "../data/BlogStatus";
+import { RequestStatus } from "../data/RequestStatus";
 import { BlogService } from "../backend/BlogService";
 import Blog from "../data/Blog";
+import { BlogState } from "../data/BlogState";
+import StatusDropDown from "./StatusDropdown";
 
 type InputFormProps = {
   blogs: Array<Blog>;
-  addBlog: (blogIndex: number) => void;
-  updateBlogStatus: (blogIndex: number, status: BlogStatus) => void;
+  addBlog: (
+    blogIndex: number,
+    blogTitle: string,
+    blogKeywords: string,
+    blogState: BlogState
+  ) => void;
+  updateBlogStatus: (blogIndex: number, status: RequestStatus) => void;
   udpateBlogNotes: (blogIndex: number, message: string) => void;
   showAlertHandler: () => void;
   hideAlertHandler: () => void;
+  setMessage: (message: string) => void;
 };
 
 const BlogForm: React.FC<InputFormProps> = (props) => {
   const [blogTitle, setBlogTitle] = useState<string>("");
-  const [keywords, setKeywords] = useState<string>("");
-  const [message, setMessage] = useState<string>("");
+  const [blogKeyWords, setBlogKeywords] = useState<string>("");
+  const [blogState, setBlogState] = useState<BlogState>(BlogState.draft);
 
   const blogService = new BlogService(true);
 
@@ -23,23 +31,25 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
     event.preventDefault();
     const blogIndex = props.blogs.length;
 
-    props.addBlog(blogIndex);
+    props.addBlog(blogIndex, blogTitle, blogKeyWords, blogState);
     try {
-      const response = await blogService.writeBlog(blogTitle, keywords);
+      const response = await blogService.writeBlog(blogTitle, blogKeyWords);
       console.log(response.data.status);
       if (response.data.status === "error") {
-        props.updateBlogStatus(blogIndex, BlogStatus.failed);
+        props.updateBlogStatus(blogIndex, RequestStatus.failed);
       } else {
-        props.updateBlogStatus(blogIndex, BlogStatus.success);
+        props.updateBlogStatus(blogIndex, RequestStatus.success);
       }
       props.udpateBlogNotes(blogIndex, response.data.message);
     } catch (e: unknown) {
-      props.updateBlogStatus(blogIndex, BlogStatus.failed);
+      props.updateBlogStatus(blogIndex, RequestStatus.failed);
       if (e instanceof Error) {
         props.udpateBlogNotes(blogIndex, e.message);
-        setMessage(`Things exploded (${e.message})`);
+        props.setMessage(`Things exploded (${e.message})`);
       } else {
-        setMessage("An unknown exception occured when sending a request.");
+        props.setMessage(
+          "An unknown exception occured when sending a request."
+        );
       }
       props.showAlertHandler();
     }
@@ -70,11 +80,15 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
             type="text"
             className="form-control"
             id="keywords"
-            value={keywords}
-            onChange={(e) => setKeywords(e.target.value)}
+            value={blogKeyWords}
+            onChange={(e) => setBlogKeywords(e.target.value)}
             required
           />
         </div>
+        <div className="mb-3">
+          <StatusDropDown updateBlogState={setBlogState} />
+        </div>
+
         <button type="submit" className="btn btn-primary">
           Write Blog Post
         </button>
