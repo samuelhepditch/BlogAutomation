@@ -31,7 +31,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/write_blog', methods=['POST'])
-@cross_origin()
+@cross_origin(origin='*')
 def write_blog():
     try:
         body = request.get_json()
