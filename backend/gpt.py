@@ -36,7 +36,7 @@ class GPTApi:
         return chosenCategory
 
 
-    def create_blog_post(self, title, keywords: list) -> BlogPost:
+    def create_blog_post(self, title, keywords: list, status) -> BlogPost:
         # 1. Get the content outline for the blog post based on the title.
         outline_prompt = (f"Create a topic cluster for the blog post titled: {title} "
                           f"using these keywords: {', '.join(keywords)}. "
@@ -77,4 +77,4 @@ class GPTApi:
 
         category = self.get_post_category(title)
 
-        return BlogPost(title=title, content=full_content, category_id=category[1],featured_image_id=CATEGORY_IMAGE_IDS[category[0]])
+        return BlogPost(title=title, content=full_content, category_id=category[1],featured_image_id=CATEGORY_IMAGE_IDS[category[0]], status=status)

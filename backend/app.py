@@ -21,8 +21,8 @@ def add_keyword_to_file(keyword):
     with open('used_keywords.txt', 'a') as f:
         f.write(keyword + '\n')
 
-def create_blog_post(title, keywords):
-    blogPost = gptAPI.create_blog_post(title, keywords)
+def create_blog_post(title, keywords, status):
+    blogPost = gptAPI.create_blog_post(title, keywords, status)
 
     wpAPI.create_post(blogPost)
 
@@ -35,9 +35,10 @@ def index():
 def write_blog():
     try:
         body = request.get_json()
-        title = body['blog_title']
+        title = body['title']
         keywords = body['keywords'].split(',')
         keywords.append(title)
+        status = body['status']
 
         used_keywords = get_used_keywords()
 
@@ -51,7 +52,7 @@ def write_blog():
                 return jsonify({"status": "error", "message": f"Keyword '{keyword}' has been used before!"})
         
         # Call your main code to create a blog post
-        create_blog_post(title, keywords)
+        create_blog_post(title, keywords, status)
 
         return jsonify({"status": "success", "message": "Blog post written successfully!"})
     
