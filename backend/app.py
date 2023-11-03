@@ -60,6 +60,11 @@ def write_blog():
         return jsonify({"status": "error", 'message': error})
     
 if __name__ == "__main__":
+    # Make sure WP API is authenticated, or else you'll be making blogs for nothing
+    if not wpAPI.is_auth():
+        print("!!! WP API NOT AUTHENTICATED !!!")
+        exit()
+
     # Check if the text file exists, if not, create it
     if not os.path.exists('used_keywords.txt'):
         with open('used_keywords.txt', 'w'):
