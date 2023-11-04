@@ -70,7 +70,7 @@ class GPTApi:
         # 3. For each item in the topic cluster, send a request to fill in the content.
         for section in outline_sections:
             content_prompt = ("Expand upon the outline below, writing 250 words for an article. "
-                              "This is only one section of the article. No need for an intro or conclusion. " 
+                              "No need for an intro or conclusion. " 
                               "Keep it interesting & informative. Organize the content by the subtopic, including "
                               "headings for each subtopic. Write 2 paragraphs for each subtopic."
                               "Use an active voice. Write at the level of a twelfth-grader. "
