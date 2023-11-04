@@ -56,7 +56,7 @@ class GPTApi:
         # 2. Get the content outline for the blog post based on the title.
         outline_prompt = (f"Create a detailed outline for the blog post titled '{title}' "
                           f"using these keywords: {', '.join(keywords)}. "
-                          "Seperate each section. Do not give the title.")
+                          "Seperate each section. Do not give the title. Do not mention introduction. ")
 
         outline_response = openai.ChatCompletion.create(
             model=self.model_4, 
@@ -69,14 +69,13 @@ class GPTApi:
         
         # 3. For each item in the topic cluster, send a request to fill in the content.
         for section in outline_sections:
-            content_prompt = ("Expand upon the topic outline below, writing 250 words for an article."
+            content_prompt = ("Expand upon the outline below, writing 250 words for an article. "
                               "This is only one section of the article. No need for an intro or conclusion. " 
                               "Keep it interesting & informative. Organize the content by the subtopic, including "
                               "headings for each subtopic. Write 2 paragraphs for each subtopic."
-                              "Use an active voice. Write at the level of a twelfth-grader. Include "
-                              f"these keywords if they are relevant: {', '.join(keywords)}\n"
-                              "Output as HTML. Do not include quotes in your output. "
-                              f"This is the topic outline:\n{section}")
+                              "Use an active voice. Write at the level of a twelfth-grader. "
+                              "Output as HTML. Do not use <h1>. Do not include quotes in your output. "
+                              f"This is the outline:\n{section}")
             
             content_response = openai.ChatCompletion.create(
                 model=self.model_4, 
