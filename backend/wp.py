@@ -18,13 +18,16 @@ CATEGORY_IMAGE_IDS = {
 
 class WordPressApi:
 
+    def __init__(self):
+        auth_string = '{}:{}'.format(wp_username, wp_password)
+        self.encoded_auth_string = base64.b64encode(auth_string.encode('utf-8')).decode('utf-8')
+
     def create_post(self, blogPost: BlogPost):
         
-        auth_string = '{}:{}'.format(wp_username, wp_password)
-        encoded_auth_string = base64.b64encode(auth_string.encode('utf-8')).decode('utf-8')
+        
 
         headers = {
-            'Authorization': 'Basic ' + encoded_auth_string
+            'Authorization': 'Basic ' + self.encoded_auth_string
         }
 
         post_args = {
@@ -57,6 +60,16 @@ class WordPressApi:
 
         return cleanedCategories
 
+    def is_auth(self) -> bool:
+        endpoint = wp_domain + "/wp-json/wp/v2/users?context=edit"
 
-WordPressApi().get_categories()
+        headers = {
+            'Authorization': 'Basic ' + self.encoded_auth_string
+        }
 
+        response = requests.get(endpoint, headers=headers)
+        
+        if response.status_code == 200:
+            return True
+        else:
+            return False

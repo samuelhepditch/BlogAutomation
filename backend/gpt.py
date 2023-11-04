@@ -36,27 +36,27 @@ class GPTApi:
         return chosenCategory
 
 
-    def create_blog_post(self, topic, keywords: list) -> BlogPost:
-
-        # 1. Get a title based on the topic and list of keywords.
-        title_prompt = (f"You want to write a blog post about: {topic}. "
-                        "You must come up with a concise and SEO optimized title."
-                        "Include the topic in the title. Only return the title and ensure"
-                        "that it is 60 characters or less.")
+    def create_blog_post(self, title, keywords: list, status) -> BlogPost:
+        content = []
         
-        title_response = openai.ChatCompletion.create(
+        # 1. Get the introduction for the article.
+        intro_prompt = (f"Write a 200 word introduction for a blog article titled '{title}'. "
+                          "Keep it simple & informative. Use an active voice. Write at the level of a twelfth-grader. "
+                          f"Include these keywords: {', '.join(keywords)}. Output as HTML. Do not include quotes in your output. Do not include the title.")
+        
+        intro_response = openai.ChatCompletion.create(
             model=self.model_4, 
             messages=[
-                {"role": "user", "content": title_prompt}
+                {"role": "user", "content": intro_prompt}
             ]
         )
-        title = title_response['choices'][0]['message']['content']
-        title = title.strip("""\"""")
+        intro = intro_response['choices'][0]['message']['content']
+        content.append(intro)
 
         # 2. Get the content outline for the blog post based on the title.
-        outline_prompt = (f"Create a topic cluster for the blog post titled: {title} "
+        outline_prompt = (f"Create a detailed outline for the blog post titled '{title}' "
                           f"using these keywords: {', '.join(keywords)}. "
-                          "Separate clusters by empty line. Do not give the title.")
+                          "Seperate each section. Do not give the title. Do not mention introduction. ")
 
         outline_response = openai.ChatCompletion.create(
             model=self.model_4, 
@@ -68,15 +68,14 @@ class GPTApi:
         outline_sections = re.split(r'\n\s*\n', outline)
         
         # 3. For each item in the topic cluster, send a request to fill in the content.
-        content = []
         for section in outline_sections:
-            content_prompt = ("Expand upon the topic outline below, writing 250 words for an article."
-                              "This is only one section of the article. No need for an intro or conclusion. " 
+            content_prompt = ("Expand upon the outline below, writing 250 words for an article. "
+                              "No need for an intro or conclusion. " 
                               "Keep it interesting & informative. Organize the content by the subtopic, including "
                               "headings for each subtopic. Write 2 paragraphs for each subtopic."
-                              "Use an active voice. Write at the level of a twelfth-grader. Try to include "
-                              f"these keywords, if they are relevant: {', '.join(keywords)}\n"
-                              f"This is the topic outline: {section}")
+                              "Use an active voice. Write at the level of a twelfth-grader. "
+                              "Output as HTML. Do not use <h1>. Do not include quotes in your output. "
+                              f"This is the outline:\n{section}")
             
             content_response = openai.ChatCompletion.create(
                 model=self.model_4, 
@@ -85,11 +84,10 @@ class GPTApi:
                 ]
             )
             content.append(content_response['choices'][0]['message']['content'])
-            content.append("\n")
 
         # 4. Initialize and return an instance of the BlogPost class with the title and the concatenated content.
         full_content = '\n\n'.join(content)
 
         category = self.get_post_category(title)
 
-        return BlogPost(title=title, content=full_content, category_id=category[1],featured_image_id=CATEGORY_IMAGE_IDS[category[0]])
+        return BlogPost(title=title, content=full_content, category_id=category[1],featured_image_id=CATEGORY_IMAGE_IDS[category[0]], status=status)

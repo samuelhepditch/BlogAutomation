@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
+import { BlogStatus } from '../data/BlogStatus';
 
 export class BlogService {
     local: boolean;
@@ -11,9 +12,10 @@ export class BlogService {
         }
     }
 
-    async writeBlog(topic: string, keywords: string): Promise<any> {
+
+    async writeBlog(title: string, keywords: string, blogStatus: BlogStatus): Promise<AxiosResponse<any, any>> {
         try {
-            const response = await axios.post("/write_blog", {topic: topic, keywords: keywords});
+            const response = await axios.post("/write_blog", {title: title, keywords: keywords, status: blogStatus});
             return response;
         } catch (error: unknown) {
             // Handle any errors or rejections from the server here

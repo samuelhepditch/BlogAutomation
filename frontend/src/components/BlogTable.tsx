@@ -1,5 +1,5 @@
 import Blog from "../data/Blog";
-import { BlogStatus } from "../data/BlogStatus";
+import { RequestStatus } from "../data/RequestStatus";
 import "../App.css";
 
 type BlogTableProps = {
@@ -12,7 +12,7 @@ const BlogTable = (props: BlogTableProps) => {
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Post Topic</th>
+          <th scope="col">Post Title</th>
           <th scope="col">Post Keywords</th>
           <th scope="col">Status</th>
           <th scope="col">Notes</th>
@@ -29,16 +29,16 @@ const BlogTable = (props: BlogTableProps) => {
               <td>{blog.keywords}</td>
               <td
                 className={
-                  blog.status === BlogStatus.success
+                  blog.requestStatus === RequestStatus.success
                     ? "table-success"
-                    : blog.status === BlogStatus.failed
+                    : blog.requestStatus === RequestStatus.failed
                     ? "table-danger"
-                    : blog.status === BlogStatus.in_progress
+                    : blog.requestStatus === RequestStatus.in_progress
                     ? "table-info"
                     : ""
                 }
               >
-                {blog.status}
+                {blog.requestStatus}
               </td>
               <td>{blog.notes}</td>
             </tr>
