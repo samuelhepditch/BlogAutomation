@@ -29,10 +29,6 @@ def create_blog_post(title, keywords, status):
 
     wpAPI.create_post(blogPost)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/write_blog', methods=['POST'])
 @cross_origin(origin='*')
 def write_blog():
