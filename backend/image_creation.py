@@ -1,30 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-
-
-def text_wrap(text, font, max_width):
-    lines = []
-    # If the text width is smaller than the image width, then no need to wrap
-    if font.getbbox(text)[2] <= max_width:
-        lines.append(text)
-    else:
-        # Split the line by spaces to get words
-        words = text.split(' ')
-        i = 0
-        # While there are words left to be checked
-        while i < len(words):
-            line = ''
-            # Build a line while the line is shorter than the image width
-            while i < len(words) and font.getbbox(line + words[i])[2] <= max_width:
-                line += words[i] + " "
-                i += 1
-            if not line:
-                # If text never fits the line, force break the line
-                line = words[i]
-                i += 1
-            # Remove trailing space
-            line = line.rstrip()
-            lines.append(line)
-    return lines
+import textwrap
 
 
 def create_image(title):
@@ -52,16 +27,20 @@ def create_image(title):
     text_color = (255, 255, 255)
 
     # Wrap the title text
-    title_lines = text_wrap(title, title_font, image.width)
+    title_lines = textwrap.wrap(title, width=image.width // (title_font_size // 2))
 
-    # Calculate the height of the title block
-    sum(title_font.getbbox(line)[3] for line in title_lines)
+    # Calculate the total height of the title block
+    title_block_height = 0
+    for line in title_lines:
+        _, _, _, line_height = title_font.getbbox(line)
+        title_block_height += line_height  # Adjust line height incrementally
 
-    # Initial position of the title block, padded from top by 1/6th of image height
-    y_position = image.height // 6
+    # Calculate the initial y position to vertically center the title block
+    y_position = (image.height - title_block_height) // 2
+
     for line in title_lines:
         # Get the width and height of the line of text
-        line_width, line_height = title_font.getbbox(line)[2:]
+        line_width, line_height = title_font.getbbox(line)[2], title_font.getbbox(line)[3]
         # Calculate the x position
         x_position = (image.width - line_width) // 2
         # Draw the line on the image
@@ -78,3 +57,4 @@ def create_image(title):
     # Save the edited image
     image.save(f"{title}.png")
 
+create_image("Cinnamon: Is Your Pregnancy at Risk?")
