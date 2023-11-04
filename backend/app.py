@@ -4,6 +4,7 @@ from wp import WordPressApi
 from gpt import GPTApi
 import os
 import openai
+from image_creation import create_image
 
 
 
@@ -48,12 +49,12 @@ def write_blog():
             if keyword in used_keywords:
                 return jsonify({"status": "error", "message": f"Keyword '{keyword}' has been used before!"})
         
-        # Call your main code to create a blog post
-        response = create_blog_post(title, keywords, status)
-
-        if response:
-            return response
+        # Generate featured image based on title
+        create_image(title)
         
+        # Call your main code to create a blog post
+        create_blog_post(title, keywords, status)
+
         return jsonify({"status": "success", "message": "Blog post written successfully!"})
         
     except openai.error.RateLimitError as e:
