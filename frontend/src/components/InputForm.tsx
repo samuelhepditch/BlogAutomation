@@ -38,7 +38,7 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
         blogKeyWords,
         blogStatus
       );
-      console.log(response.data.status);
+      console.log("response:" + response.data.status);
       if (response.data.status === "error") {
         props.updateBlogStatus(blogIndex, RequestStatus.failed);
       } else {
@@ -49,7 +49,7 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
       props.updateBlogStatus(blogIndex, RequestStatus.failed);
       if (e instanceof Error) {
         props.udpateBlogNotes(blogIndex, e.message);
-        props.setMessage(`Things exploded (${e.message})`);
+        props.setMessage(`Error in writeBlog: (${e})`);
       } else {
         props.setMessage(
           "An unknown exception occured when sending a request."

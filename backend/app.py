@@ -3,11 +3,14 @@ from flask_cors import CORS, cross_origin
 from wp import WordPressApi
 from gpt import GPTApi
 import os
+import openai
+from image_creation import create_image
 
 
 
 app = Flask(__name__)
-cors = CORS(app)
+cors = CORS(app, resources={r"/write_blog": {"origins": "http://localhost:3000"}})
+
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 wpAPI = WordPressApi() 
@@ -26,15 +29,9 @@ def add_keyword_to_file(keyword):
 
 def create_blog_post(title, keywords, status):
     blogPost = gptAPI.create_blog_post(title, keywords, status)
-
     wpAPI.create_post(blogPost)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 @app.route('/write_blog', methods=['POST'])
-@cross_origin(origin='*')
 def write_blog():
     try:
         body = request.get_json()
@@ -52,13 +49,23 @@ def write_blog():
             if keyword in used_keywords:
                 return jsonify({"status": "error", "message": f"Keyword '{keyword}' has been used before!"})
         
+        # Generate featured image based on title
+        create_image(title)
+        
         # Call your main code to create a blog post
         create_blog_post(title, keywords, status)
 
         return jsonify({"status": "success", "message": "Blog post written successfully!"})
-    
-    except Exception as error:
-        return jsonify({"status": "error", 'message': error})
+        
+    except openai.error.RateLimitError as e:
+        # Log the rate limit error and return an appropriate response
+        app.logger.error(f"Rate limit exceeded: {str(e)}")
+        return jsonify({"status": "error", "message": "Rate limit exceeded"}), 429
+    except Exception as e:
+        # Log the generic error and return an appropriate response
+        app.logger.error(f"An error occurred: {str(e)}")
+        return jsonify({"status": "error", "message": "Internal Server Error"}), 500
+
     
 if __name__ == "__main__":
     # Make sure WP API is authenticated, or else you'll be making blogs for nothing
