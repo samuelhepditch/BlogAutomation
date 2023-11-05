@@ -94,7 +94,7 @@ class GPTApi:
                 "No need for an intro or conclusion. "
                 "Keep it interesting & informative. Organize the content by the subtopic, including "
                 "headings for each subtopic. Write 2 paragraphs for each subtopic."
-                "Use an active voice. Write at the level of a 9th grader. "
+                "Use an active voice. Write at the level of a 9th grader. Use lists where appropriate. "
                 "Output as HTML. Do not use <h1>. Do not include quotes in your output. "
                 f"This is the outline:\n{section}"
             )
