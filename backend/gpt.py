@@ -67,7 +67,7 @@ class GPTApi:
         # 2. Get the content outline for the blog post based on the title. No try except because outline is mandatory
         try:
             outline_prompt = (
-                f"Create a detailed outline for the blog post titled '{title}' with a maximum of 8 topics."
+                f"Create a detailed outline for the blog post titled '{title}' with a maximum of 8 topics "
                 f"using these keywords: {', '.join(keywords)}. "
                 "Separate each section. Do not give the title. Do not mention introduction. "
             )
