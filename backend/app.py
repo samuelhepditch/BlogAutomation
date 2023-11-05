@@ -80,8 +80,6 @@ def write_blog():
         app.logger.error(f"Rate limit exceeded for post {title}: {str(e)}")
         return jsonify({"status": "error", "message": "Rate limit exceeded"}), 429
     except Exception as e:
-        # Log the generic error and return an appropriate response
-        app.logger.error(f"An error occurred: {str(e)}")
         return jsonify({"status": "error", "message": "Internal Server Error"}), 500
 
 
