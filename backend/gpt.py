@@ -67,9 +67,9 @@ class GPTApi:
         # 2. Get the content outline for the blog post based on the title. No try except because outline is mandatory
         try:
             outline_prompt = (
-                f"Create a detailed outline for the blog post titled '{title}' "
+                f"Create a detailed outline for the blog post titled '{title}' with a maximum of 8 topics."
                 f"using these keywords: {', '.join(keywords)}. "
-                "Seperate each section. Do not give the title. Do not mention introduction. "
+                "Separate each section. Do not give the title. Do not mention introduction. "
             )
 
             outline_response = openai.ChatCompletion.create(
@@ -94,7 +94,7 @@ class GPTApi:
                 "No need for an intro or conclusion. "
                 "Keep it interesting & informative. Organize the content by the subtopic, including "
                 "headings for each subtopic. Write 2 paragraphs for each subtopic."
-                "Use an active voice. Write at the level of a twelfth-grader. "
+                "Use an active voice. Write at the level of a 9th grader. "
                 "Output as HTML. Do not use <h1>. Do not include quotes in your output. "
                 f"This is the outline:\n{section}"
             )
