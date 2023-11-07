@@ -27,6 +27,9 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
 
   const blogService = new BlogService(true);
 
+  const wordCount = blogTitle.trim().split(/\s+/).filter(Boolean).length;
+  const isWordCountValid = wordCount >= 5 && wordCount <= 12;
+
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
     const blogIndex = props.blogs.length;
@@ -59,14 +62,25 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
     }
   };
 
+  const inputStatusStyle = {
+    color: isWordCountValid ? "green" : "red",
+  };
+
   return (
     <div className="col-md-6 offset-md-3">
       <h3>Create a Blog Post</h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
+          <span style={inputStatusStyle}>
+            {isWordCountValid
+              ? "Word count is within range (5-12)."
+              : "Word count is NOT within range (5-12)."}
+          </span>
+          <br />
           <label htmlFor="blog_title" className="form-label">
             Title
           </label>
+
           <input
             type="text"
             className="form-control"
@@ -86,7 +100,6 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
             id="keywords"
             value={blogKeyWords}
             onChange={(e) => setBlogKeywords(e.target.value)}
-            required
           />
         </div>
         <div className="mb-3">

@@ -42,13 +42,16 @@ class GPTApi:
     def create_blog_post(self, title, keywords: list, status) -> BlogPost:
         content = []
 
+        use_keywords = True if len(keywords) != 0 else False
+
         # 1. Get the introduction for the article. No try except because intro is mandatory
         try:
-            intro_prompt = (
-                f"Write a 100 word introduction for a blog article titled '{title}'. "
-                "Keep it simple & informative. Use an active voice. Write at the level of a twelfth-grader. "
-                f"Include these keywords: {', '.join(keywords)}. Output as HTML. Do not include quotes in your output. Do not include the title."
-            )
+            if use_keywords:
+                intro_prompt = GPTBlogPrompts.get_intro_prompt_with_keywords(
+                    title, keywords
+                )
+            else:
+                intro_prompt = GPTBlogPrompts.get_intro_prompt_no_keywords(title)
 
             intro_response = openai.ChatCompletion.create(
                 model=self.model_4, messages=[{"role": "user", "content": intro_prompt}]
@@ -66,11 +69,12 @@ class GPTApi:
 
         # 2. Get the content outline for the blog post based on the title. No try except because outline is mandatory
         try:
-            outline_prompt = (
-                f"Create a detailed outline for the blog post titled '{title}' with a maximum of 8 topics "
-                f"using these keywords: {', '.join(keywords)}. "
-                "Separate each section. Do not give the title. Do not mention introduction. "
-            )
+            if use_keywords:
+                outline_prompt = GPTBlogPrompts.get_outline_prompt_with_keywords(
+                    title, keywords
+                )
+            else:
+                outline_prompt = GPTBlogPrompts.get_outline_prompt_no_keywords(title)
 
             outline_response = openai.ChatCompletion.create(
                 model=self.model_4,
@@ -89,15 +93,7 @@ class GPTApi:
 
         # 3. For each item in the topic cluster, send a request to fill in the content.
         for section in outline_sections:
-            content_prompt = (
-                "Expand upon the outline below, writing 250 words for an article. "
-                "No need for an intro or conclusion. "
-                "Keep it interesting & informative. Organize the content by the subtopic, including "
-                "headings for each subtopic. Write 2 paragraphs for each subtopic."
-                "Use an active voice. Write at the level of a 9th grader. "
-                "Output as HTML. Do not use <h1>. Do not include quotes in your output. "
-                f"This is the outline:\n{section}"
-            )
+            content_prompt = GPTBlogPrompts.get_content_prompt(section)
             # If one fails, still try to continue with the post. It might be salveagable.
             # We don't want a situaton where 9/10 sections are successful and the last one makes us lose the post
             try:

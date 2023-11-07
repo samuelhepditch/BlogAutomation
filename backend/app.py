@@ -50,7 +50,7 @@ def write_blog():
     try:
         body = request.get_json()
         title = body["title"]
-        keywords = body["keywords"].split(",")
+        keywords = body["keywords"].split(",") if body["keywords"] != "" else []
         status = body["status"]
 
         used_keywords = get_used_keywords()
