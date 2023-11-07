@@ -39,7 +39,7 @@ MANIFEST
 frontend/node_modules
 
 # Images
-backend/images
+backend/images/*
 
 # Log files
 backend/logging/*
