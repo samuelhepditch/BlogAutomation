@@ -28,7 +28,7 @@ def create_image(title):
     try:
         # Load the image
 
-        image = Image.open(os.path.join(__location__, "images", "base_image.jpg"))
+        image = Image.open(os.path.join(__location__, "base_image", "base_image.jpg"))
         draw = ImageDraw.Draw(image)
 
         # Define the base font size
