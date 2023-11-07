@@ -13,28 +13,25 @@ class GPTApi:
     model_35 = "gpt-3.5-turbo"
 
     def __init__(self, categories: list[tuple]):
-        self.categories = categories
+        self.category_tuples = categories
         openai.api_key = open_api_key
         self.logger = logging.getLogger()
 
     def get_post_category(self, title) -> str:
-        categoriesListString = str([t[0] for t in self.categories])
-        category_prompt = GPTBlogPrompts.CATEGORIES.value.format(
-            title, categoriesListString
-        )
-        role_prompt = GPTBlogPrompts.ROLE.value
+        categoryStrings = [categoryTuple[0] for categoryTuple in self.category_tuples]
+
+        category_prompt = GPTBlogPrompts.get_category_prompt(title, categoryStrings)
 
         categoryResponse = openai.ChatCompletion.create(
             model=self.model_4,
             messages=[
-                {"role": "system", "content": role_prompt},
                 {"role": "user", "content": category_prompt},
             ],
         )
 
         categoryString = categoryResponse["choices"][0]["message"]["content"]
         chosenCategory = next(
-            (t for t in self.categories if t[0] in categoryString), None
+            (t for t in self.category_tuples if t[0] in categoryString), None
         )
 
         return chosenCategory

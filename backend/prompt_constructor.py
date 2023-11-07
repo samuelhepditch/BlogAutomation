@@ -45,3 +45,10 @@ class GPTBlogPrompts:
             "Output as HTML. Do not use <h1>. Do not include quotes in your output. "
             f"This is the outline:\n{section}"
         )
+
+    def get_category_prompt(title, categories):
+        return (
+            "I will give you a list of categories for a health blog. "
+            f"Based on this post's title: '{title}', what category would you put this post into? "
+            f"Here are the categories: {', '.join(categories)}. Just give the category name."
+        )

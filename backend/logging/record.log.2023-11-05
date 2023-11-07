@@ -1,0 +1,401 @@
+[2023-11-05 09:43:46,630] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:43:46,631] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:43:46,634] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:43:49,117] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:43:49,125] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:44:35,181] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:44:35] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:44:46,018] ERROR in app: An error occurred: BlogPost.__init__() got an unexpected keyword argument 'keywords'
+[2023-11-05 09:44:53,121] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:44:53] "[35m[1mPOST /write_blog HTTP/1.1[0m" 500 -
+[2023-11-05 09:45:27,359] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:45:27,360] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:45:27,364] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:45:29,753] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:45:29,759] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:45:32,097] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:45:32] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:45:35,225] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:45:35,226] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:45:35,351] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:45:53,443] ERROR in wp: Failed to upload image test_title.png. Response: {'code': 'rest_upload_no_content_type', 'message': 'No Content-Type supplied.', 'data': {'status': 400}}
+[2023-11-05 09:45:53,655] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:45:53] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:07,086] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:46:07] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:07,093] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:46:07,094] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:46:07,194] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:46:11,253] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.png. Response: {'code': 'rest_upload_no_content_type', 'message': 'No Content-Type supplied.', 'data': {'status': 400}}
+[2023-11-05 09:46:11,461] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:46:11] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:28,636] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:46:28] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:28,643] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:46:28,644] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:46:28,741] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:46:32,602] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.png. Response: {'code': 'rest_upload_no_content_type', 'message': 'No Content-Type supplied.', 'data': {'status': 400}}
+[2023-11-05 09:46:32,788] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:46:32] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:40,082] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:46:40,083] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:46:40,087] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:46:42,396] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:46:42,403] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:46:42,496] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:46:42] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:42,504] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:46:42] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:46:57,291] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:46:57,292] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:46:57,295] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:46:59,642] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:46:59,651] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:47:10,533] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\app.py', reloading
+[2023-11-05 09:47:12,768] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:47:15,112] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:47:15,119] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:47:20,048] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:47:20,050] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:47:20,053] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:47:22,390] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:47:22,397] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:47:24,177] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:47:24] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:47:26,835] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:47:26,836] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:47:26,948] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:47:42,114] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.png. Response: {'code': 'rest_upload_no_content_type', 'message': 'No Content-Type supplied.', 'data': {'status': 400}}
+[2023-11-05 09:47:49,909] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:47:49] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:47:55,816] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:47:55] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:47:55,823] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:47:55,824] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:47:55,921] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:50:00,194] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.png. Response: {'code': 'rest_upload_no_content_type', 'message': 'No Content-Type supplied.', 'data': {'status': 400}}
+[2023-11-05 09:50:00,968] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:50:00] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:50:09,005] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\image_creation.py', reloading
+[2023-11-05 09:50:09,820] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:50:12,187] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:50:12,193] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:50:48,837] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 09:50:52,222] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:55:52,450] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:55:52,452] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:55:52,456] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:55:54,782] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:55:54,788] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:55:54,974] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:55:54] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:55:55,001] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:55:55,001] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:55:55,099] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:55:55,110] ERROR in image_creation: Failed to crate image for Test Title: How to Win Fortnite
+[2023-11-05 09:56:04,999] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:56:04] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:56:10,191] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:56:10] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:56:10,199] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:56:10,200] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:56:10,298] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:56:10,310] ERROR in image_creation: Failed to crate image for Test Title: How to Win Fortnite
+[2023-11-05 09:56:17,869] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:56:17] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:56:23,649] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:56:23] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:56:23,657] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:56:23,657] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:56:23,761] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:56:23,772] ERROR in image_creation: Failed to crate image for Test Title: How to Win Fortnite
+[2023-11-05 09:56:27,238] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:56:27] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:56:28,819] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:56:28] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:56:34,589] DEBUG in PngImagePlugin: STREAM b'IHDR' 16 13
+[2023-11-05 09:56:34,590] DEBUG in PngImagePlugin: STREAM b'IDAT' 41 8192
+[2023-11-05 09:56:34,849] DEBUG in PngImagePlugin: STREAM b'eXIf' 6829000 14
+[2023-11-05 09:58:54,299] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\image_creation.py', reloading
+[2023-11-05 09:58:58,437] ERROR in image_creation: Failed to crate image for Test Title: How to Win Fortnite
+[2023-11-05 09:58:59,233] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:59:05,185] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:59:05,187] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:59:05,191] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:59:07,621] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:59:07,627] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:59:07,723] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:07] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:59:13,736] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {'code': 'rest_upload_no_content_disposition', 'message': 'No Content-Disposition supplied.', 'data': {'status': 400}}
+[2023-11-05 09:59:19,842] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:19] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:59:22,755] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:22] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:59:23,136] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {'code': 'rest_upload_no_content_disposition', 'message': 'No Content-Disposition supplied.', 'data': {'status': 400}}
+[2023-11-05 09:59:23,335] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:23] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:59:29,742] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:29] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:59:30,160] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {'code': 'rest_upload_no_content_disposition', 'message': 'No Content-Disposition supplied.', 'data': {'status': 400}}
+[2023-11-05 09:59:30,361] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:30] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 09:59:38,383] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 09:59:38,384] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 09:59:38,388] INFO in _internal:  * Restarting with stat
+[2023-11-05 09:59:40,754] WARNING in _internal:  * Debugger is active!
+[2023-11-05 09:59:40,762] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 09:59:40,855] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 09:59:40] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:00:56,547] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:01:16,523] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {'code': 'rest_upload_no_content_disposition', 'message': 'No Content-Disposition supplied.', 'data': {'status': 400}}
+[2023-11-05 10:01:17,321] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:01:19,878] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:01:19,885] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:01:25,437] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:01:25,438] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:01:25,441] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:01:27,853] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:01:27,859] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:01:27,953] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:01:27] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:02:15,611] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:03:41,743] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {'code': 'rest_upload_sideload_error', 'message': 'Sorry, you are not allowed to upload this file type.', 'data': {'status': 500}}
+[2023-11-05 10:03:42,475] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:03:50,872] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:03:50,874] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:03:50,877] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:03:53,233] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:03:53,239] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:03:53,332] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:03:53] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:04:56,279] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:04:56,599] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:04:56] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:06:10,328] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:06:10,329] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:06:10,332] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:06:12,762] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:06:12,769] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:06:12,863] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:06:12] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:08:41,804] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:08:42,057] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:08:42] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:12:46,329] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:12:46,331] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:12:46,334] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:12:48,761] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:12:48,768] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:12:48,866] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:12:48] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:13:07,458] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:13:07] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:15:38,330] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:15:38,333] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:15:38,337] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:15:40,692] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:15:40,700] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:15:40,803] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:15:40] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:18:36,545] ERROR in wp: Failed to upload image alt text for test_title_how_to_win_fortnite.jpg. Response: {"id":691,"date":"2023-11-05T15:15:45","date_gmt":"2023-11-05T15:15:45","guid":{"rendered":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite.jpg","raw":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite.jpg"},"modified":"2023-11-05T15:15:45","modified_gmt":"2023-11-05T15:15:45","slug":"test_title_how_to_win_fortnite","status":"inherit","type":"attachment","link":"https:\/\/wellnesswonderspot.com\/test_title_how_to_win_fortnite\/","title":{"raw":"test_title_how_to_win_fortnite","rendered":"test_title_how_to_win_fortnite"},"author":3,"comment_status":"open","ping_status":"closed","template":"","meta":[],"permalink_template":"https:\/\/wellnesswonderspot.com\/?attachment_id=691","generated_slug":"test_title_how_to_win_fortnite","description":{"raw":"","rendered":"<p class=\"attachment\"><a href='https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-scaled.jpg'><img loading=\"lazy\" width=\"300\" height=\"171\" src=\"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-300x171.jpg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" srcset=\"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-300x171.jpg 300w, https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-1024x585.jpg 1024w, https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-768x439.jpg 768w, https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-1536x878.jpg 1536w, https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-2048x1170.jpg 2048w\" sizes=\"(max-width: 300px) 100vw, 300px\" \/><\/a><\/p>\n"},"caption":{"raw":"","rendered":""},"alt_text":"","media_type":"image","mime_type":"image\/jpeg","media_details":{"width":2560,"height":1463,"file":"2023\/11\/test_title_how_to_win_fortnite-scaled.jpg","filesize":495901,"sizes":{"medium":{"file":"test_title_how_to_win_fortnite-300x171.jpg","width":300,"height":171,"filesize":11317,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-300x171.jpg"},"large":{"file":"test_title_how_to_win_fortnite-1024x585.jpg","width":1024,"height":585,"filesize":88201,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-1024x585.jpg"},"thumbnail":{"file":"test_title_how_to_win_fortnite-150x150.jpg","width":150,"height":150,"filesize":5426,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-150x150.jpg"},"medium_large":{"file":"test_title_how_to_win_fortnite-768x439.jpg","width":768,"height":439,"filesize":53769,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-768x439.jpg"},"1536x1536":{"file":"test_title_how_to_win_fortnite-1536x878.jpg","width":1536,"height":878,"filesize":189463,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-1536x878.jpg"},"2048x2048":{"file":"test_title_how_to_win_fortnite-2048x1170.jpg","width":2048,"height":1170,"filesize":329158,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-2048x1170.jpg"},"full":{"file":"test_title_how_to_win_fortnite-scaled.jpg","width":2560,"height":1463,"mime_type":"image\/jpeg","source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-scaled.jpg"}},"image_meta":{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0","keywords":[]},"original_image":"test_title_how_to_win_fortnite.jpg"},"post":null,"source_url":"https:\/\/wellnesswonderspot.com\/wp-content\/uploads\/2023\/11\/test_title_how_to_win_fortnite-scaled.jpg","missing_image_sizes":[],"_links":{"self":[{"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/media\/691"}],"collection":[{"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/media"}],"about":[{"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/types\/attachment"}],"author":[{"embeddable":true,"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/users\/3"}],"replies":[{"embeddable":true,"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/comments?post=691"}],"wp:action-unfiltered-html":[{"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/media\/691"}],"wp:action-assign-author":[{"href":"https:\/\/wellnesswonderspot.com\/wp-json\/wp\/v2\/media\/691"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}
+[2023-11-05 10:20:55,099] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:20:55,101] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:20:55,104] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:20:57,485] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:20:57,492] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:20:57,590] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:20:57] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:21:49,512] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:21:51,560] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:21:51,803] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:21:51] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:21:52,234] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:21:59,925] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:21:59,927] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:21:59,931] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:22:02,381] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:22:02,387] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:22:02,478] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:22:02] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:22:11,779] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:22:12,051] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:22:12] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:23:43,826] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:23:44,724] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:23:47,218] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:23:47,225] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:24:03,513] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:24:06,117] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:24:08,511] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:24:08,518] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:24:15,477] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:24:15,479] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:24:15,482] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:24:17,916] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:24:17,922] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:24:18,110] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:24:18] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:24:27,954] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:24:28,194] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:24:28] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:24:32,115] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:24:32,941] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:24:35,385] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:24:35,392] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:24:43,127] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:24:43,128] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:24:43,131] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:24:45,557] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:24:45,564] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:24:45,661] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:24:45] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:25:02,870] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:25:03,107] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:25:03] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:25:10,780] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:25:10,783] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:25:10,787] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:25:13,167] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:25:13,174] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:25:13,269] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:25:13] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:25:30,181] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:25:30,430] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:25:30] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:25:40,294] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:25:41,199] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:25:46,356] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:25:46,358] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:25:46,361] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:25:48,873] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:25:48,880] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:25:48,973] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:25:48] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:26:19,699] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:26:19,939] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:26:19] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:28:24,742] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:28:24,744] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:28:24,748] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:28:27,175] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:28:27,182] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:28:27,274] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:28:27] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:28:32,046] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:28:32,300] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:28:32] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:28:35,991] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:28:40,625] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:28:40,627] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:28:40,631] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:28:42,987] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:28:42,993] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:28:43,086] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:28:43] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:28:50,904] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:28:51,126] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:28:51] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:29:42,336] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:29:43,051] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:29:45,485] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:29:45,491] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:30:20,025] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:30:55,949] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:30:55,951] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:30:55,955] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:30:58,415] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:30:58,422] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:30:58,516] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:30:58] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:31:11,261] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:31:11,541] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:31:11] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:32:45,062] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:32:45,880] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:33:15,108] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:33:15,109] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:33:15,113] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:33:17,526] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:33:17,533] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:33:17,627] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:33:17] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:33:24,143] ERROR in wp: Failed to upload image test_title_how_to_win_fortnite.jpg. Response: {"code":"rest_upload_sideload_error","message":"Sorry, you are not allowed to upload this file type.","data":{"status":500}}
+[2023-11-05 10:33:24,382] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:33:24] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:34:02,889] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:34:03,777] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:34:06,176] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:34:06,183] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:34:22,473] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:34:35,256] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:34:35,259] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:34:35,262] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:34:37,649] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:34:37,656] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:34:37,749] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:34:37] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:35:11,384] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\wp.py', reloading
+[2023-11-05 10:35:17,865] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:35:17] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:35:18,255] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:35:20,780] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:35:20,786] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:44:46,169] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:44:46,171] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:44:46,174] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:44:48,469] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:44:48,479] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:44:50,315] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:44:50] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:45:23,648] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:45:23] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:47:16,762] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:47:16,764] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:47:16,767] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:47:19,114] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:47:19,122] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:47:22,378] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:47:22] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:47:25,873] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:47:25] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:49:07,956] INFO in _internal:  * Detected change in 'd:\\GRQS\\BlogAutomation\\backend\\app.py', reloading
+[2023-11-05 10:49:10,041] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:54:59,216] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:54:59,217] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:54:59,221] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:55:00,233] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:55:00,238] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:55:01,678] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:55:01] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:55:01,682] CRITICAL in gpt: Failed to create intro for Test Title: How to Win Fortnite
+The error was: failure here
+[2023-11-05 10:55:01,683] ERROR in app: An error occurred: failure here
+[2023-11-05 10:55:01,684] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:55:01] "[35m[1mPOST /write_blog HTTP/1.1[0m" 500 -
+[2023-11-05 10:56:11,547] INFO in _internal:  * Detected change in 'D:\\GRQS\\BlogAutomation\\backend\\app.py', reloading
+[2023-11-05 10:56:11,622] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:56:12,627] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:56:12,631] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:56:42,601] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 10:56:42,602] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 10:56:42,604] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:56:43,602] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:56:43,606] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 10:56:44,445] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:56:44] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:56:44,450] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:56:44] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:56:51,575] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:56:51] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 10:56:51,581] CRITICAL in gpt: Failed to create intro for Test Title: How to Win Fortnite
+The error was: failure here
+[2023-11-05 10:56:51,582] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 10:56:51] "[35m[1mPOST /write_blog HTTP/1.1[0m" 500 -
+[2023-11-05 10:57:15,750] INFO in _internal:  * Detected change in 'D:\\GRQS\\BlogAutomation\\backend\\gpt.py', reloading
+[2023-11-05 10:57:15,833] INFO in _internal:  * Restarting with stat
+[2023-11-05 10:57:16,814] WARNING in _internal:  * Debugger is active!
+[2023-11-05 10:57:16,818] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 13:18:04,766] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 13:18:04,767] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 13:18:04,769] INFO in _internal:  * Restarting with stat
+[2023-11-05 13:18:05,758] WARNING in _internal:  * Debugger is active!
+[2023-11-05 13:18:05,764] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 13:23:27,054] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 13:23:27] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 13:28:52,298] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 13:28:52] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 13:44:12,723] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 13:44:12,724] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 13:44:12,725] INFO in _internal:  * Restarting with stat
+[2023-11-05 13:44:13,706] WARNING in _internal:  * Debugger is active!
+[2023-11-05 13:44:13,710] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 13:44:29,639] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 13:44:29] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 13:49:19,851] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 13:49:19] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 13:59:07,056] INFO in _internal:  * Detected change in 'D:\\GRQS\\BlogAutomation\\backend\\gpt.py', reloading
+[2023-11-05 13:59:07,135] INFO in _internal:  * Restarting with stat
+[2023-11-05 13:59:08,430] WARNING in _internal:  * Debugger is active!
+[2023-11-05 13:59:08,434] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 14:00:06,664] INFO in _internal:  * Detected change in 'D:\\GRQS\\BlogAutomation\\backend\\gpt.py', reloading
+[2023-11-05 14:00:06,774] INFO in _internal:  * Restarting with stat
+[2023-11-05 14:03:58,721] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 14:03:58,722] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 14:03:58,724] INFO in _internal:  * Restarting with stat
+[2023-11-05 14:03:59,776] WARNING in _internal:  * Debugger is active!
+[2023-11-05 14:03:59,779] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 14:04:11,392] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 14:04:11] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 14:04:11,403] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 14:04:11] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 14:04:18,674] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 14:04:18] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 14:08:59,273] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 14:08:59] "POST /write_blog HTTP/1.1" 200 -
+[2023-11-05 14:09:10,739] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 14:09:10,739] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 14:09:10,741] INFO in _internal:  * Restarting with stat
+[2023-11-05 14:16:11,365] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2023-11-05 14:16:11,367] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2023-11-05 14:16:11,369] INFO in _internal:  * Restarting with stat
+[2023-11-05 14:16:12,511] WARNING in _internal:  * Debugger is active!
+[2023-11-05 14:16:12,515] INFO in _internal:  * Debugger PIN: 719-583-845
+[2023-11-05 14:16:18,526] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 14:16:18] "OPTIONS /write_blog HTTP/1.1" 200 -
+[2023-11-05 14:20:14,543] INFO in _internal: 127.0.0.1 - - [05/Nov/2023 14:20:14] "POST /write_blog HTTP/1.1" 200 -
