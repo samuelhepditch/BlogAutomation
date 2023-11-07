@@ -38,6 +38,12 @@ MANIFEST
 # Node modules
 frontend/node_modules
 
+# Images
+backend/images
+
+# Log files
+backend/logging/*
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

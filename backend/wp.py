@@ -6,19 +6,6 @@ import os
 from blog_post import BlogPost
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
-
-CATEGORY_IMAGE_IDS = {
-    "Disease Prevention": 545,
-    "Fitness & Exercise": 536,
-    "Holistic Health": 537,
-    "Longevity": 538,
-    "Nutrition & Diet": 543,
-    "Skincare": 539,
-    "Sleep": 540,
-    "Wellnesss": 541,
-    "Women's Health": 542,
-}
-
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
@@ -105,20 +92,20 @@ class WordPressApi:
             self.logger.critical(f"Failed to upload post {blogPost.title}: {err}")
             raise
 
-    def get_categories(self) -> list[str]:
+    def get_categories(self) -> list[tuple]:
         endpoint = wp_domain + "/wp-json/wp/v2/categories"
 
         response = requests.get(endpoint, headers={"Content-Type": "application/json"})
         responseJson = response.json()
 
         categories = [(item["name"], item["id"]) for item in responseJson]
-        cleanedCategories = []
+        cleanedCategoryTuples = []
 
         for category in categories:
             cleaned = (category[0].replace("&amp;", "&"), category[1])
-            cleanedCategories.append(cleaned)
+            cleanedCategoryTuples.append(cleaned)
 
-        return cleanedCategories
+        return cleanedCategoryTuples
 
     def update_image_alt_text(self, media_endpoint, media_id, title):
         headers_update = {
