@@ -33,6 +33,7 @@ function App() {
   };
 
   const writeBlog = async (currentBlog: Blog) => {
+    console.log("attempt")
     setIsSending(true);
     updateBlogStatus(currentBlog.index, RequestStatus.in_progress);
     try {
@@ -103,15 +104,17 @@ function App() {
   };
 
   const onRetry = (blogIndex: number) => {
+    console.log("retry")
     udpateBlogNotes(blogIndex, '');
-    setFailedToWrite(false)
-    sendNextBlog()
+    updateBlogStatus(blogIndex, RequestStatus.queued)
+    setFailedToWrite(false);
+    sendNextBlog();
   };
 
   const onSkip = (blogIndex: number) => {
-    updateBlogStatus(blogIndex, RequestStatus.skipped)
-    setFailedToWrite(false)
-    sendNextBlog()
+    updateBlogStatus(blogIndex, RequestStatus.skipped);
+    setFailedToWrite(false);
+    sendNextBlog();
   };
 
   const showAlertHandler = () => {
