@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { RequestStatus } from "../data/RequestStatus";
-import { BlogService } from "../backend/BlogService";
 import Blog from "../data/Blog";
 import { BlogStatus } from "../data/BlogStatus";
 import StatusDropDown from "./StatusDropdown";
 
 type InputFormProps = {
-  blogs: Array<Blog>;
-  addBlog: (
-    blogIndex: number,
+  blogQueue: Array<Blog>;
+  addBlogToQueue: (
     blogTitle: string,
     blogKeywords: string,
     blogStatus: BlogStatus
@@ -25,41 +23,12 @@ const BlogForm: React.FC<InputFormProps> = (props) => {
   const [blogKeyWords, setBlogKeywords] = useState<string>("");
   const [blogStatus, setBlogStatus] = useState<BlogStatus>(BlogStatus.draft);
 
-  const blogService = new BlogService(true);
-
   const wordCount = blogTitle.trim().split(/\s+/).filter(Boolean).length;
   const isWordCountValid = wordCount >= 5 && wordCount <= 12;
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    const blogIndex = props.blogs.length;
-
-    props.addBlog(blogIndex, blogTitle, blogKeyWords, blogStatus);
-    try {
-      const response = await blogService.writeBlog(
-        blogTitle,
-        blogKeyWords,
-        blogStatus
-      );
-      console.log("response:" + response.data.status);
-      if (response.data.status === "error") {
-        props.updateBlogStatus(blogIndex, RequestStatus.failed);
-      } else {
-        props.updateBlogStatus(blogIndex, RequestStatus.success);
-      }
-      props.udpateBlogNotes(blogIndex, response.data.message);
-    } catch (e: unknown) {
-      props.updateBlogStatus(blogIndex, RequestStatus.failed);
-      if (e instanceof Error) {
-        props.udpateBlogNotes(blogIndex, e.message);
-        props.setMessage(`Error in writeBlog: (${e})`);
-      } else {
-        props.setMessage(
-          "An unknown exception occured when sending a request."
-        );
-      }
-      props.showAlertHandler();
-    }
+    props.addBlogToQueue(blogTitle, blogKeyWords, blogStatus);
   };
 
   const inputStatusStyle = {

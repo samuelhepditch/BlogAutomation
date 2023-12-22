@@ -1,5 +1,8 @@
 export enum RequestStatus{
-    in_progress = "In Progress",
-    failed = "Failed",
-    success = "Success"
+    queued = "Queued",
+    dequeued = "Dequeued",
+    in_progress = "Write In Progress",
+    failed = "Write Failed",
+    skipped = "Skipped",
+    success = "Write Succeeded"
 }
